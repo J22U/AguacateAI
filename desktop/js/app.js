@@ -141,9 +141,8 @@ function findNearestCity(lat, lng) {
 
 async function fetchWeather() {
   try {
-    const location = await getUserLocation();
-    let cityKey = location.city || findNearestCity(location.lat, location.lng);
-    const city = colombianCities[cityKey] || colombianCities.bogota;
+    // Use default city immediately without waiting for geolocation
+    const city = colombianCities.bogota;
     
     const now = new Date();
     const hour = now.getHours();
@@ -178,6 +177,9 @@ async function fetchWeather() {
     document.getElementById('weather-region').textContent = city.region;
   } catch (e) {
     console.log('Weather error:', e);
+    // Fallback values
+    document.getElementById('weather-city').textContent = 'Bogotá';
+    document.getElementById('weather-temp').textContent = '20°C';
   }
 }
 
