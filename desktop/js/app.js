@@ -964,7 +964,51 @@ function renderPests() {
   `).join('');
 }
 
-// ==================== INITIALIZATION ====================
+// ==================== AI INITIALIZATION ====================
+
+let aiModelsReady = false;
+let aiStatus = 'Cargando IA...';
+
+async function initAI() {
+  console.log('🤖 Iniciando modelos de IA...');
+  
+  try {
+    if (window.AIModels && window.AIModels.initializeAIModels) {
+      await window.AIModels.initializeAIModels();
+      aiModelsReady = true;
+      aiStatus = 'IA Activa';
+      console.log('✅ Modelos de IA listos!');
+      
+      const statusEl = document.getElementById('status-text');
+      if (statusEl) {
+        statusEl.textContent = 'IA Activa';
+      }
+    }
+  } catch (error) {
+    console.error('Error initializing AI:', error);
+    aiStatus = 'IA No disponible';
+  }
+}
+
+function getAIResult(colors, scanType) {
+  if (!aiModelsReady || !window.AIModels) {
+    return null;
+  }
+  
+  try {
+    if (scanType === 'leaf') {
+      return window.AIModels.predictLeaf(colors);
+    } else if (scanType === 'fruit') {
+      return window.AIModels.predictFruit(colors);
+    } else if (scanType === 'pest') {
+      return window.AIModels.predictPest(colors);
+    }
+  } catch (e) {
+    console.error('AI prediction error:', e);
+  }
+  
+  return null;
+}
 
 // ==================== INITIALIZATION ====================
 
@@ -972,7 +1016,6 @@ function hideLoader() {
   const loader = document.getElementById('app-loader');
   if (loader) {
     loader.classList.add('hidden');
-    // Remove from DOM after animation
     setTimeout(() => {
       loader.style.display = 'none';
     }, 500);
@@ -982,7 +1025,6 @@ function hideLoader() {
 document.addEventListener('DOMContentLoaded', function() {
   currentUser = getCurrentUser();
   
-  // Auto-login for demo purposes (skip redirect to login)
   if (!currentUser) {
     currentUser = { name: 'Usuario' };
     setCurrentUser(currentUser);
@@ -995,6 +1037,8 @@ document.addEventListener('DOMContentLoaded', function() {
   renderPests();
   showScreen('home');
   
-  // Hide the loader after everything is ready
+  // Initialize AI in background
+  initAI();
+  
   hideLoader();
 });
