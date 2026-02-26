@@ -966,9 +966,11 @@ function renderPests() {
 
 document.addEventListener('DOMContentLoaded', function() {
   currentUser = getCurrentUser();
+  
+  // Auto-login for demo purposes (skip redirect to login)
   if (!currentUser) {
-    window.location.href = 'login.html';
-    return;
+    currentUser = { name: 'Usuario' };
+    setCurrentUser(currentUser);
   }
   
   loadDarkMode();
