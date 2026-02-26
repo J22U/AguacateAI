@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aguacate AI - Análisis de Aguacate</title>
+  <link rel="stylesheet" href="css/styles-new.css">
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="logo">
+      <span class="logo-icon">🥑</span>
+      <span>Aguacate AI</span>
+    </div>
+    <div class="header-actions">
+      <div class="connection-status" id="connection-status">
+        <span class="status-dot online"></span>
+        <span class="status-text" id="status-text">En línea</span>
+      </div>
+      <div class="search-box">
+        <input type="text" id="search-input" placeholder="Buscar en Google..." onkeypress="handleSearch(event)">
+        <button class="search-btn" onclick="performSearch()">🔍</button>
+      </div>
+      <button class="header-btn" id="dark-mode-toggle" onclick="toggleDarkMode()">🌙</button>
+      <button class="header-btn" onclick="showScreen('stats')" title="Estadísticas">📊</button>
+      <button class="header-btn" onclick="showScreen('tips')" title="Consejos">💡</button>
+      <button class="header-btn" onclick="showScreen('gallery')" title="Galería">🖼️</button>
+      <button class="header-btn" onclick="showScreen('pests')" title="Plagas">🐛</button>
+      <button class="header-btn" onclick="logout()" title="Cerrar sesión">🚪</button>
+    </div>
+  </header>
+
+  <!-- Main Container -->
+  <main class="container">
+    
+    <!-- Weather Widget -->
+    <div class="weather-widget">
+      <div class="weather-header">
+        <div class="weather-icon" id="day-night-icon">☀️</div>
+        <div class="weather-info">
+          <div class="weather-temp" id="weather-temp">--°C</div>
+          <div class="weather-details">
+            <div class="weather-city" id="weather-city">Cargando...</div>
+            <div class="weather-condition" id="weather-condition">-</div>
+          </div>
+        </div>
+      </div>
+      <div class="weather-stats">
+        <div class="weather-stat">
+          <div class="weather-stat-label">Hora</div>
+          <div class="weather-stat-value" id="weather-time">--:--</div>
+        </div>
+        <div class="weather-stat">
+          <div class="weather-stat-label">Humedad</div>
+          <div class="weather-stat-value" id="weather-humidity">--%</div>
+        </div>
+        <div class="weather-stat">
+          <div class="weather-stat-label">Región</div>
+          <div class="weather-stat-value" id="weather-region">-</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Home Screen -->
+    <section id="home" class="screen active">
+      <h2 style="text-align: center; margin-bottom: 1.5rem; color: var(--primary);">¿Qué deseas analizar?</h2>
+      
+      <div class="main-menu">
+        <div class="menu-card" onclick="startScan('leaf')">
+          <div class="menu-card-icon">🍃</div>
+          <h3>Hoja de Aguacate</h3>
+          <p>Detecta enfermedades en las hojas de tu árbol</p>
+        </div>
+        
+        <div class="menu-card" onclick="startScan('fruit')">
+          <div class="menu-card-icon">🥑</div>
+          <h3>Fruto de Aguacate</h3>
+          <p>Determina el nivel de maduración del aguacate</p>
+        </div>
+        
+        <div class="menu-card" onclick="startScan('pest')">
+          <div class="menu-card-icon">🐛</div>
+          <h3>Escanear Plaga</h3>
+          <p>Identifica plagas e insectos en tu árbol</p>
+        </div>
+        
+        <div class="menu-card" onclick="showScreen('history')">
+          <div class="menu-card-icon">📋</div>
+          <h3>Historial</h3>
+          <p>Revisa tus análisis anteriores</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Camera Screen -->
+    <section id="camera" class="screen">
+      <a href="#" class="back-btn" onclick="goHome()">← Volver</a>
+      
+      <div class="camera-section">
+        <div class="camera-box">
+          <h2 id="scan-title">📷 Escanear</h2>
+          
+          <div class="video-container">
+            <video id="video" autoplay playsinline></video>
+            <img id="preview" style="display: none;">
+            <div class="camera-frame"></div>
+            <div class="camera-hint">Coloca la hoja/fruto/plaga en el centro</div>
+          </div>
+          
+          <canvas id="canvas" style="display: none;"></canvas>
+          
+          <div id="preview-container" style="display: none;">
+            <img id="preview-img" src="" alt="Captura" style="width: 100%; border-radius: 12px; margin-top: 1rem;">
+          </div>
+          
+          <div class="btn-group">
+            <button id="capture-btn" class="btn btn-primary" onclick="captureImage()">📸 Capturar</button>
+            <button id="analyze-btn" class="btn btn-primary" onclick="analyzeImage()" style="display: none;">🔍 Analizar</button>
+            <button id="retake-btn" class="btn btn-secondary" onclick="retakeImage()" style="display: none;">🔄 Repetir</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Results Screen -->
+    <section id="results" class="screen">
+      <a href="#" class="back-btn" onclick="goHome()">← Volver</a>
+      
+      <div class="result-section">
+        <div class="result-box" id="result-content">
+          <!-- Results will be displayed here -->
+        </div>
+      </div>
+    </section>
+
+    <!-- History Screen -->
+    <section id="history" class="screen">
+      <a href="#" class="back-btn" onclick="goHome()">← Volver</a>
+      
+      <div class="history-section">
+        <h2 style="text-align: center; margin-bottom: 1.5rem; color: var(--primary);">Historial de Análisis</h2>
+        
+        <div class="history-list" id="history-list">
+          <!-- History items will be displayed here -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Stats Screen -->
+    <section id="stats" class="screen">
+      <a href="#" class="back-btn" onclick="goHome()">← Volver</a>
+      
+      <div class="history-section">
+        <h2 style="text-align: center; margin-bottom: 1.5rem; color: var(--primary);">📊 Estadísticas</h2>
+        
+        <div class="stats-overview" id="stats-overview">
+          <!-- Stats will be displayed here -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Tips Screen -->
+    <section id="tips" class="screen">
+      <a href="#" class="back-btn" onclick="goHome()">← Volver</a>
+      
+      <div class="history-section">
+        <h2 style="text-align: center; margin-bottom: 1.5rem; color: var(--primary);">💡 Consejos de Cuidado</h2>
+        
+        <div class="tips-container" id="tips-container">
+          <!-- Tips will be displayed here -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Gallery Screen -->
+    <section id="gallery" class="screen">
+      <a href="#" class="back-btn" onclick="goHome()">← Volver</a>
+      
+      <div class="history-section">
+        <h2 style="text-align: center; margin-bottom: 1.5rem; color: var(--primary);">🖼️ Galería de Imágenes</h2>
+        
+        <div class="gallery-grid" id="gallery-grid">
+          <!-- Gallery images will be displayed here -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Pests Screen -->
+    <section id="pests" class="screen">
+      <a href="#" class="back-btn" onclick="goHome()">← Volver</a>
+      
+      <div class="history-section">
+        <h2 style="text-align: center; margin-bottom: 1.5rem; color: var(--primary);">🐛 Plagas del Aguacate</h2>
+        
+        <div class="history-list" id="pests-list"></div>
+      </div>
+    </section>
+
+  </main>
+
+  <script src="js/database.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,571 @@
+{
+  "version": "1.0.0",
+  "lastUpdated": "2024-01-15",
+  
+  "diseases": {
+    "anthracnose": {
+      "id": "anthracnose",
+      "name": "Antracnosis",
+      "scientific": "Colletotrichum gloeosporioides",
+      "category": "Fungal",
+      "severity": "High",
+      "description": "Enfermedad fúngica causada por Colletotrichum gloeosporioides. Es una de las enfermedades más comunes y destructivas del aguacate. Afecta hojas, ramas y frutos, causando manchas cafes oscuras que pueden coalescer y matar el tejido.",
+      "symptoms": [
+        "Manchas cafes oscuras en hojas",
+        "Frutos con pudrición negra",
+        "Caída prematura de hojas",
+        "Lesiones hundidas en tallos"
+      ],
+      "treatment": "1. Aplicar fungicida de cobre (1-2 g/L) cada 7-14 días\n2. Eliminar y destruir partes afectadas\n3. Mejorar circulación de aire en el árbol\n4. Evitar riego por aspersión\n5. Aplicar en días secos",
+      "prevention": [
+        "Evitar heridas en la planta",
+        "Desinfectar herramientas de poda",
+        "Eliminar frutos caídos",
+        "Mantener árbol bien podado"
+      ],
+      "affectedParts": ["Leaves", "Fruits", "Stems"],
+      "treatmentProducts": [
+        {"name": "Fungicida de Cobre", "dose": "1-2 g/L"},
+        {"name": "Mancozeb", "dose": "2 g/L"},
+        {"name": "Benomil", "dose": "1 g/L"}
+      ],
+      "images": []
+    },
+    "powdery_mildew": {
+      "id": "powdery_mildew",
+      "name": "Mildiú Polvoriento",
+      "scientific": "Oidium spp.",
+      "category": "Fungal",
+      "severity": "Medium",
+      "description": "Enfermedad causada por Oidium spp. Se caracteriza por un polvo blanco similar al harina que aparece en hojas, tallos y frutos jóvenes. Es más común en condiciones de alta humedad y temperaturas moderadas.",
+      "symptoms": [
+        "Polvo blanco harinoso en hojas",
+        "Hojas enrolladas",
+        "Crecimiento retardado",
+        "Frutos deformados"
+      ],
+      "treatment": "1. Azufre en polvo (20-30 kg/ha) al amanecer\n2. Fungicidas sistémicos como Triadimefon\n3. Aplicar cada 10-14 días\n4. Eliminar partes muy afectadas\n5. Mejorar ventilación",
+      "prevention": [
+        "Buena circulación de aire",
+        "Evitar exceso de nitrógeno",
+        "Monitorear regularmente",
+        "Controlar malezas"
+      ],
+      "affectedParts": ["Leaves", "Stems", "Young Fruits"],
+      "treatmentProducts": [
+        {"name": "Azufre en polvo", "dose": "20-30 kg/ha"},
+        {"name": "Triadimefon", "dose": "0.5 g/L"},
+        {"name": "Myclobutanil", "dose": "0.3 g/L"}
+      ],
+      "images": []
+    },
+    "leaf_spot": {
+      "id": "leaf_spot",
+      "name": "Mancha Foliar",
+      "scientific": "Alternaria spp., Bipolaris spp.",
+      "category": "Fungal",
+      "severity": "Low",
+      "description": "Enfermedad fúngica causada por diversos géneros como Alternaria, Bipolaris y Curvularia. Produce manchas de diferentes tamaños y colores en las hojas, reduciendo la capacidad fotosintética del árbol.",
+      "symptoms": [
+        "Manchas cafes con halo amarillo",
+        "Manchas necróticas",
+        "Caída de hojas",
+        "Debilitamiento general"
+      ],
+      "treatment": "1. Eliminar hojas afectadas\n2. Aplicar fungicida de cobre (1.5 g/L)\n3. Mancozeb (2 g/L) en casos severos\n4. Aplicar cada 7-10 días\n5. Evitar humedad excesiva en follaje",
+      "prevention": [
+        "Eliminar restos de poda",
+        "Evitar riego por aspersión",
+        "Mejorar ventilación",
+        "Aplicar fungicidas preventivos"
+      ],
+      "affectedParts": ["Leaves"],
+      "treatmentProducts": [
+        {"name": "Fungicida de Cobre", "dose": "1.5 g/L"},
+        {"name": "Mancozeb", "dose": "2 g/L"}
+      ],
+      "images": []
+    },
+    "cercospora": {
+      "id": "cercospora",
+      "name": "Mancha de Cercospora",
+      "scientific": "Cercospora purpurea",
+      "category": "Fungal",
+      "severity": "Low",
+      "description": "Causada por el hongo Cercospora purpurea. Es una enfermedad foliar común que causa manchas características con centros claros y bordes oscuros. Afecta principalmente hojas maduras.",
+      "symptoms": [
+        "Manchas irregulares con centro gris claro",
+        "Borde cafes oscuro",
+        "Hojas amarillas",
+        "Caída prematura"
+      ],
+      "treatment": "1. Fungicida de cobre + Mancozeb\n2. Aplicar cada 14 días\n3. Podar para mejorar ventilación\n4. Eliminar hojas caídas\n5. Aplicar en pre-lluvia",
+      "prevention": [
+        "Recoger hojas caídas",
+        "Poda de aireación",
+        "Evitar estrés hídrico",
+        "Fertilización equilibrada"
+      ],
+      "affectedParts": ["Leaves"],
+      "treatmentProducts": [
+        {"name": "Fungicida de Cobre", "dose": "1.5 g/L"},
+        {"name": "Mancozeb", "dose": "2 g/L"}
+      ],
+      "images": []
+    },
+    "sunburn": {
+      "id": "sunburn",
+      "name": "Quemadura Solar",
+      "scientific": "Physiological disorder",
+      "category": "Physiological",
+      "severity": "Medium",
+      "description": "Daño fisiológico causado por exposición excesiva a radiación UV y altas temperaturas. Afecta principalmente frutos y hojas expuestas directamente al sol, causando decoloración y necrosis.",
+      "symptoms": [
+        "Manchas amarillas/cafes en frutos",
+        "Piel quemada",
+        "Frutos arrugados",
+        "Hojas marchitas"
+      ],
+      "treatment": "1. Instalar malla sombra (50%) temporalmente\n2. Aplicar protector solar para plantas\n3. Mantener riego adecuado\n4. Podar para crear sombra natural\n5. Aplicar carbonato de calcio líquido",
+      "prevention": [
+        "Malla sombra en zonas cálidas",
+        "Riego regular",
+        "Podas de formación",
+        "Evitar poda excesiva"
+      ],
+      "affectedParts": ["Leaves", "Fruits"],
+      "treatmentProducts": [
+        {"name": "Protector solar vegetal", "dose": "Según indicaciones"},
+        {"name": "Carbonato de calcio", "dose": "5 g/L"}
+      ],
+      "images": []
+    },
+    "root_rot": {
+      "id": "root_rot",
+      "name": "Pudrición de Raíces",
+      "scientific": "Phytophthora cinnamomi",
+      "category": "Fungal",
+      "severity": "High",
+      "description": "Enfermedad causada por Phytophthora cinnamomi, uno de los patógenos más destructivos del aguacate. Ataca el sistema radicular causando pudrición y muerte del árbol.",
+      "symptoms": [
+        "Hojas萎凋 (marchitamiento)",
+        "Clorosis (amarillamiento)",
+        "Pudrición de raíces",
+        "Muerte regresiva"
+      ],
+      "treatment": "1. Aplicar fungicida sistémico (Metalaxyl)\n2. Mejorar drenaje del suelo\n3. Eliminar árboles muy afectados\n4. Aplicar Phosphorous acid\n5. Enmiendas orgánicas",
+      "prevention": [
+        "Evitar encharcamiento",
+        "Usar portainjertos resistentes",
+        "Suelo bien drenado",
+        "No regar en exceso"
+      ],
+      "affectedParts": ["Roots", "Trunk", "Leaves"],
+      "treatmentProducts": [
+        {"name": "Metalaxyl", "dose": "2 g/L"},
+        {"name": "Phosphorous acid", "dose": "3 ml/L"},
+        {"name": "Fosetyl-Al", "dose": "2 g/L"}
+      ],
+      "images": []
+    },
+    "healthy": {
+      "id": "healthy",
+      "name": "Hoja Sana",
+      "scientific": null,
+      "category": "Healthy",
+      "severity": "None",
+      "description": "La hoja de aguacate está saludable sin signos de enfermedades aparentes. El color verde intenso indica buena salud y capacidad fotosintética óptima.",
+      "symptoms": [
+        "Color verde intenso",
+        "Sin manchas",
+        "Textura firme",
+        "Borde intacto"
+      ],
+      "treatment": "✅ Continuar con el cuidado normal:\n1. Riego regular (2-3 veces por semana)\n2. Fertilización equilibrada\n3. Poda de mantenimiento\n4. Monitoreo preventivo",
+      "prevention": [
+        "Riego adecuado",
+        "Fertilización equilibrada",
+        "Poda de mantenimiento",
+        "Monitoreo regular"
+      ],
+      "affectedParts": [],
+      "treatmentProducts": [],
+      "images": []
+    }
+  },
+
+  "pests": {
+    "thrips": {
+      "id": "thrips",
+      "name": "Trips del Aguacate",
+      "scientific": "Scirtothrips perseae",
+      "category": "Insect",
+      "severity": "Medium",
+      "description": "Los trips son pequeños insectos alargados de color oscuro que se alimentan succionando la savia de hojas, tallos y frutos pequeños del aguacate.",
+      "symptoms": [
+        "Hojas con apariencia plateada o bronceada",
+        "Frutos con marcas/ cicatrices",
+        "Deformación de frutos",
+        "Crecimiento retarded"
+      ],
+      "treatment": "Spinosad (0.5-1 ml/L) cada 7 días, o Aceite de neem (5ml/L) + Jabón potásico.",
+      "prevention": [
+        "Trampas adhesivas azules",
+        "Mantener humedad relativa above 60%",
+        "Monitoreo regular",
+        "Control de malezas"
+      ],
+      "affectedParts": ["Leaves", "Fruits"],
+      "treatmentProducts": [
+        {"name": "Spinosad", "dose": "0.5-1 ml/L"},
+        {"name": "Aceite de neem", "dose": "5 ml/L"},
+        {"name": "Jabón potásico", "dose": "10 g/L"}
+      ],
+      "images": []
+    },
+    "scale": {
+      "id": "scale",
+      "name": "Cochinillas",
+      "scientific": "Coccus hesperidum",
+      "category": "Insect",
+      "severity": "Medium",
+      "description": "Las cochinillas son insectos inmóviles que se adhieren a tallos, hojas y frutos, formando una capa protecta cerosa.",
+      "symptoms": [
+        "Escudos cafés o blancos en tallos y hojas",
+        "Melaza viscosa",
+        "Hongos de fumagina",
+        "Debilitamiento"
+      ],
+      "treatment": "Aceite mineral (10-15 ml/L) + Imidacloprid. Alcohol isopropílico al 70% en áreas localizadas.",
+      "prevention": [
+        "Inspeccionar plantas nuevas",
+        "Podar ramas muy infestadas",
+        "Monitoreo regular",
+        "Control de hormigas"
+      ],
+      "affectedParts": ["Stems", "Leaves", "Fruits"],
+      "treatmentProducts": [
+        {"name": "Aceite mineral", "dose": "10-15 ml/L"},
+        {"name": "Imidacloprid", "dose": "0.5 ml/L"},
+        {"name": "Alcohol isopropílico", "dose": "70%"}
+      ],
+      "images": []
+    },
+    "mites": {
+      "id": "mites",
+      "name": "Ácaros del Aguacate",
+      "scientific": "Oligonychus perseae",
+      "category": "Arachnid",
+      "severity": "Medium",
+      "description": "Los ácaros son arácnidos microscópicos que se alimentan del contenido celular de las hojas.",
+      "symptoms": [
+        "Manchas amarillas o bronceadas en hojas",
+        "Telarañas finas en el envés",
+        "Hojas bronceadas",
+        "Reducción de crecimiento"
+      ],
+      "treatment": "Azufre en polvo (20-30 kg/ha) o Abamectina (0.5-1 ml/L).",
+      "prevention": [
+        "Monitorear semanalmente con lupa",
+        "Mantener estrés hídrico óptimo",
+        "Evitar plaguicidas que matan predatory mites",
+        "Buena ventilación"
+      ],
+      "affectedParts": ["Leaves"],
+      "treatmentProducts": [
+        {"name": "Azufre en polvo", "dose": "20-30 kg/ha"},
+        {"name": "Abamectina", "dose": "0.5-1 ml/L"},
+        {"name": "Propargite", "dose": "1 ml/L"}
+      ],
+      "images": []
+    },
+    "worms": {
+      "id": "worms",
+      "name": "Gusanos Defoliadores",
+      "scientific": "Glena mitis",
+      "category": "Insect",
+      "severity": "High",
+      "description": "Las larvas de estas polillas se alimentan vorazmente del follaje del aguacate, pudiendo defoliar árboles completos.",
+      "symptoms": [
+        "Hojas con agujeros irregulares",
+        "Presencia de orugas",
+        "Defoliación",
+        "Daño severo al follaje"
+      ],
+      "treatment": "Bacillus thuringiensis (Bt) 1-2 kg/ha. Clorantraniliprole en infestaciones severas.",
+      "prevention": [
+        "Trampas de feromonas",
+        "Eliminar residuos de poda",
+        "Monitoreo de adultos",
+        "Control biológico"
+      ],
+      "affectedParts": ["Leaves"],
+      "treatmentProducts": [
+        {"name": "Bacillus thuringiensis", "dose": "1-2 kg/ha"},
+        {"name": "Clorantraniliprole", "dose": "0.5 ml/L"},
+        {"name": "Spinosad", "dose": "1 ml/L"}
+      ],
+      "images": []
+    },
+    "borer": {
+      "id": "borer",
+      "name": "Barrenador del Hueso",
+      "scientific": "Heilipus lauri",
+      "category": "Insect",
+      "severity": "High",
+      "description": "El barrenador del hueso es una plaga de alto riesgo. Las larvas se desarrollan dentro del fruto, causando pérdidas significativas.",
+      "symptoms": [
+        "Frutos con agujeros de entrada",
+        "Frutos que caen prematuramente",
+        "Aserrín en pedúnculo",
+        "Larvas en interior del fruto"
+      ],
+      "treatment": "Imidacloprid al inicio de floración cada 21 días. Trampas con feromonas.",
+      "prevention": [
+        "Cosechar temprano",
+        "Usar mallas protectoras en frutos",
+        "Trampas de feromonas",
+        "Eliminar frutos infestados"
+      ],
+      "affectedParts": ["Fruits"],
+      "treatmentProducts": [
+        {"name": "Imidacloprid", "dose": "0.5 ml/L"},
+        {"name": "Thiamethoxam", "dose": "0.3 g/L"}
+      ],
+      "images": []
+    },
+    "fruitfly": {
+      "id": "fruitfly",
+      "name": "Mosca de la Fruta",
+      "scientific": "Anastrepha striata",
+      "category": "Insect",
+      "severity": "High",
+      "description": "Las moscas de la fruta depositan sus huevos bajo la piel del aguacate. Las larvas se alimentan de la pulpa, causando Pudrición y rechazo del fruto.",
+      "symptoms": [
+        "Pequeño agujero de oviposición",
+        "Pulpa con túneles",
+        "Frutos que se pudren",
+        "Larvas visibles"
+      ],
+      "treatment": "Cebos tóxicos con Malatión (1-2%). Trampas Jackson con metil eugenol.",
+      "prevention": [
+        "Cosechar en madurez de cosecha",
+        "Eliminar frutos caídos",
+        "Trampas de monitoreo",
+        "Control sanitario"
+      ],
+      "affectedParts": ["Fruits"],
+      "treatmentProducts": [
+        {"name": "Malatión", "dose": "1-2%"},
+        {"name": "Protein hydrolyzate", "dose": "5%"}
+      ],
+      "images": []
+    },
+    "rootborer": {
+      "id": "rootborer",
+      "name": "Barrenador de Raíces",
+      "scientific": "Cyladrus ruber",
+      "category": "Insect",
+      "severity": "High",
+      "description": "Las larvas barrenan raíces y el cuello de la raíz, causando marchitamiento y muerte del árbol.",
+      "symptoms": [
+        "Marchitamiento inexplicado",
+        "Amarillamiento de hojas",
+        "Galerías en base del tronco",
+        "Debilidad general"
+      ],
+      "treatment": "Excavar para exponer larvas. Insecticidas granulares (Fipronil) alrededor del cuello.",
+      "prevention": [
+        "Evitar heridas en el cuello",
+        "Proteger troncos con malla primeros 3 años",
+        "Inspeccionar raíces",
+        "Controlar adultos"
+      ],
+      "affectedParts": ["Roots", "Trunk"],
+      "treatmentProducts": [
+        {"name": "Fipronil", "dose": "Gramos según tamaño"},
+        {"name": "Carbaryl", "dose": "2 g/L"}
+      ],
+      "images": []
+    },
+    "aphids": {
+      "id": "aphids",
+      "name": "Áfidos (Pulgones)",
+      "scientific": "Aphis sp.",
+      "category": "Insect",
+      "severity": "Low",
+      "description": "Pequeños insectos de cuerpo blando que se agrupan en nuevos crecimientos y succionan la savia.",
+      "symptoms": [
+        "Hojas enrolladas",
+        "Melaza y fumagina",
+        "Deformación de brotes",
+        "Presencia de hormigas"
+      ],
+      "treatment": "Jabón potásico (10 g/L) o Aceite de neem (5 ml/L). Imidacloprid en casos severos.",
+      "prevention": [
+        "Control de hormigas",
+        "Monitoreo de nuevos brotes",
+        "Conservación de predators",
+        "Eliminar partes afectadas"
+      ],
+      "affectedParts": ["Leaves", "Stems", "Young Growth"],
+      "treatmentProducts": [
+        {"name": "Jabón potásico", "dose": "10 g/L"},
+        {"name": "Aceite de neem", "dose": "5 ml/L"},
+        {"name": "Imidacloprid", "dose": "0.3 ml/L"}
+      ],
+      "images": []
+    }
+  },
+
+  "ripeness": {
+    "unripe": {
+      "id": "unripe",
+      "name": "Verde / Inmaduro",
+      "percentage": 15,
+      "daysToRipe": "5-7 días",
+      "description": "El aguacate está completamente verde y firme. No está listo para consumo.",
+      "color": "#2E7D32",
+      "texture": "Firme",
+      "recipes": ["Ensaladas", "Salsas", "Curtido"],
+      "storage": "Temperatura ambiente hasta que madure",
+      "tips": "Deja madurar a temperatura ambiente o coloca en bolsa de papel para acelerar"
+    },
+    "almost_ripe": {
+      "id": "almost_ripe",
+      "name": "Casi Maduro",
+      "percentage": 45,
+      "daysToRipe": "2-4 días",
+      "description": "El aguacate comienza a cambiar de color verde oscuro a verde más claro. Todavía firme.",
+      "color": "#558B2F",
+      "texture": "Ligeramente firme",
+      "recipes": ["Guacamole", "Tostadas", "Sándwiches"],
+      "storage": "Temperatura ambiente o refrigerar",
+      "tips": "Madurará en pocos días a temperatura ambiente"
+    },
+    "ripe": {
+      "id": "ripe",
+      "name": "Maduro",
+      "percentage": 75,
+      "daysToRipe": "Listo",
+      "description": "El aguacate está en su punto óptimo. Color verde oscuro uniforme, cede ligeramente a la presión.",
+      "color": "#33691E",
+      "texture": "Suave al tacto",
+      "recipes": ["Consumo directo", "Ensaladas", "Guacamole", "Batidos"],
+      "storage": "Refrigerar hasta 3-5 días",
+      "tips": "Perfecto para consumir. Si no lo usas inmediatamente, refrigera"
+    },
+    "overripe": {
+      "id": "overripe",
+      "name": "Sobremaduro",
+      "percentage": 95,
+      "daysToRipe": "Pasado",
+      "description": "El aguacate está muy blando, puede tener manchas oscuras y olor fuerte.",
+      "color": "#1B5E20",
+      "texture": "Muy blando/meloso",
+      "recipes": ["Batidos", "Mantequilla", "Pure", "Mascarillas"],
+      "storage": "Usar inmediatamente o descartar",
+      "tips": "Aún usable para batidos o mascarillas. No recomendado para consumo directo"
+    }
+  },
+
+  "tips": [
+    {
+      "id": "watering",
+      "icon": "💧",
+      "title": "Riego Adecuado",
+      "category": "Riego",
+      "content": "Los árboles de aguacate necesitan riego profundo pero poco frecuente. Riega 2-3 veces por semana en época seca, asegurándote de que el agua penetre al menos 30 cm en el suelo. Evita el encharcamiento."
+    },
+    {
+      "id": "fertilization",
+      "icon": "🌱",
+      "title": "Fertilización",
+      "category": "Nutrición",
+      "content": "Aplica fertilizante rico en nitrógeno durante la primavera y verano. Usa un fertilizante equilibrado (10-10-10) cada 2-3 meses. No fertilices en invierno cuando el árbol está en reposo."
+    },
+    {
+      "id": "pruning",
+      "icon": "✂️",
+      "title": "Poda de Mantenimiento",
+      "category": "Cuidado",
+      "content": "Realiza podas de formación en los primeros años para desarrollar una estructura fuerte. Elimina ramas cruzadas, enfermas o muertas. La poda más intensa debe hacerse después de la cosecha."
+    },
+    {
+      "id": "temperature",
+      "icon": "🌡️",
+      "title": "Temperatura Ideal",
+      "category": "Clima",
+      "content": "El aguacate thrive en temperaturas entre 20-30°C. Puede soportar hasta 0°C brevemente, pero las heladas dañan hojas y frutos. En zonas frías, cultiva variedades resistentes o protege con malla."
+    },
+    {
+      "id": "pollination",
+      "icon": "🪰",
+      "title": "Polinización",
+      "category": "Floración",
+      "content": "La mayoría de las variedades de aguacate tienen flores macho y hembra que maduran en diferentes tiempos. Planta al menos 2 árboles de variedades diferentes para asegurar polinización cruzada."
+    },
+    {
+      "id": "weeds",
+      "icon": "🍂",
+      "title": "Control de Malezas",
+      "category": "Mantenimiento",
+      "content": "Mantén el área bajo el árbol libre de malezas. Usa mulch orgánico (hojarasca, paja) para retener humedad y controlar hierbas. Deja al menos 5 cm de espacio entre el mulch y el tronco."
+    },
+    {
+      "id": "pests_prevention",
+      "icon": "🛡️",
+      "title": "Prevención de Plagas",
+      "category": "Sanidad",
+      "content": "Inspecciona regularmente hojas y frutos. Usa trampas adhesivas amarillas para monitorear insectos. La prevención temprana es clave: actúa cuando notes los primeros signos de plagas."
+    },
+    {
+      "id": "harvest",
+      "icon": "📅",
+      "title": "Cosecha",
+      "category": "Fruto",
+      "content": "Los aguacates no maduran en el árbol. Cosecha cuando el fruto alcance su tamaño máximo y la piel se vuelva ligeramente más oscura. Madura a temperatura ambiente en 3-7 días."
+    },
+    {
+      "id": "soil",
+      "icon": "🪴",
+      "title": "Suelo Adecuado",
+      "category": "Suelo",
+      "content": "El aguacate prefiere suelos bien drenados, ligeramente ácidos (pH 5.5-7). Evita suelos arcillosos que retengan agua. En suelos pesados, planta en elevación o monte."
+    },
+    {
+      "id": "sunlight",
+      "icon": "☀️",
+      "title": "Exposición Solar",
+      "category": "Clima",
+      "content": "Los árboles jóvenes necesitan sombra parcial (50%). Los adultos requieren pleno sol. En zonas muy calientes, proporciona protección solar en las tardes."
+    }
+  ],
+
+  "weather": {
+    "colombianCities": {
+      "bogota": { "name": "Bogotá", "temp": 14, "humidity": 80, "region": "Cundinamarca", "lat": 4.7110, "lng": -74.0721 },
+      "medellin": { "name": "Medellín", "temp": 24, "humidity": 70, "region": "Antioquia", "lat": 6.2442, "lng": -75.5812 },
+      "cali": { "name": "Cali", "temp": 26, "humidity": 65, "region": "Valle del Cauca", "lat": 3.4516, "lng": -76.5320 },
+      "barranquilla": { "name": "Barranquilla", "temp": 28, "humidity": 75, "region": "Atlántico", "lat": 10.9685, "lng": -74.7813 },
+      "cartagena": { "name": "Cartagena", "temp": 27, "humidity": 80, "region": "Bolívar", "lat": 10.3910, "lng": -75.4794 },
+      "bucaramanga": { "name": "Bucaramanga", "temp": 23, "humidity": 65, "region": "Santander", "lat": 7.1254, "lng": -73.1198 },
+      "pereira": { "name": "Pereira", "temp": 22, "humidity": 75, "region": "Risaralda", "lat": 4.8133, "lng": -75.6961 },
+      "manizales": { "name": "Manizales", "temp": 18, "humidity": 80, "region": "Caldas", "lat": 5.0689, "lng": -75.5174 },
+      "ibague": { "name": "Ibagué", "temp": 25, "humidity": 60, "region": "Tolima", "lat": 4.4389, "lng": -75.2324 },
+      "neiva": { "name": "Neiva", "temp": 28, "humidity": 55, "region": "Huila", "lat": 2.9263, "lng": -75.2819 }
+    }
+  },
+
+  "users": [],
+
+  "scans": [],
+
+  "settings": {
+    "darkMode": false,
+    "language": "es",
+    "notifications": true,
+    "offlineMode": true,
+    "autoSave": true
+  }
+}
