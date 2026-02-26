@@ -1,53 +1,9 @@
 {
   "name": "aguacate-ai-desktop",
   "version": "1.0.0",
+  "private": true,
   "description": "AI-powered desktop application for avocado leaf disease detection and fruit ripeness analysis",
-  "main": "src/main/main.js",
-  "author": "Aguacate AI Team",
-  "license": "MIT",
   "scripts": {
-    "start": "electron .",
-    "dev": "electron .",
-    "build": "electron-builder --win",
-    "build:dir": "electron-builder --win --dir",
     "vercel-build": "echo 'Static site - no build required'"
-  },
-  "build": {
-    "appId": "com.aguacateai.desktop",
-    "productName": "Aguacate AI",
-    "directories": {
-      "output": "dist"
-    },
-    "files": [
-      "src/**/*",
-      "index.html",
-      "login.html",
-      "css/**/*",
-      "js/**/*"
-    ],
-    "win": {
-      "target": [
-        {
-          "target": "nsis",
-          "arch": [
-            "x64"
-          ]
-        }
-      ],
-      "icon": "public/icon.ico"
-    },
-    "nsis": {
-      "oneClick": false,
-      "allowToChangeInstallationDirectory": true,
-      "createDesktopShortcut": true,
-      "createStartMenuShortcut": true
-    }
-  },
-  "dependencies": {
-    "electron-log": "^5.0.0"
-  },
-  "devDependencies": {
-    "electron": "^28.0.0",
-    "electron-builder": "^24.9.1"
   }
 }
