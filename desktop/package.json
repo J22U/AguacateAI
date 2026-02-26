@@ -1,9 +1,0 @@
-{
-  "name": "aguacate-ai-desktop",
-  "version": "1.0.0",
-  "private": true,
-  "description": "AI-powered desktop application for avocado leaf disease detection and fruit ripeness analysis",
-  "scripts": {
-    "vercel-build": "echo 'Static site - no build required'"
-  }
-}
