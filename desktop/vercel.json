@@ -1,0 +1,11 @@
+{
+  "buildCommand": "echo \"Web deployment - Electron build skipped\"",
+  "outputDirectory": ".",
+  "framework": null,
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/index.html"
+    }
+  ]
+}

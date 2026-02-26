@@ -9,7 +9,8 @@
     "start": "electron .",
     "dev": "electron .",
     "build": "electron-builder --win",
-    "build:dir": "electron-builder --win --dir"
+    "build:dir": "electron-builder --win --dir",
+    "vercel-build": "echo \"Web deployment - Electron build skipped\""
   },
   "build": {
     "appId": "com.aguacateai.desktop",
@@ -28,7 +29,9 @@
       "target": [
         {
           "target": "nsis",
-          "arch": ["x64"]
+          "arch": [
+            "x64"
+          ]
         }
       ],
       "icon": "public/icon.ico"
