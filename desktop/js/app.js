@@ -966,6 +966,19 @@ function renderPests() {
 
 // ==================== INITIALIZATION ====================
 
+// ==================== INITIALIZATION ====================
+
+function hideLoader() {
+  const loader = document.getElementById('app-loader');
+  if (loader) {
+    loader.classList.add('hidden');
+    // Remove from DOM after animation
+    setTimeout(() => {
+      loader.style.display = 'none';
+    }, 500);
+  }
+}
+
 document.addEventListener('DOMContentLoaded', function() {
   currentUser = getCurrentUser();
   
@@ -981,4 +994,7 @@ document.addEventListener('DOMContentLoaded', function() {
   fetchWeather();
   renderPests();
   showScreen('home');
+  
+  // Hide the loader after everything is ready
+  hideLoader();
 });
