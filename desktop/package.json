@@ -10,7 +10,7 @@
     "dev": "electron .",
     "build": "electron-builder --win",
     "build:dir": "electron-builder --win --dir",
-    "vercel-build": "echo \"Web deployment - Electron build skipped\""
+    "vercel-build": "echo 'Static site - no build required'"
   },
   "build": {
     "appId": "com.aguacateai.desktop",
