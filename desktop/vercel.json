@@ -1,7 +1,5 @@
 {
-  "build": {
-    "env": {
-      "ENABLE_EXPERIMENTAL_COREPACK": "false"
-    }
-  }
+  "buildCommand": "exit 0",
+  "outputDirectory": ".",
+  "installCommand": "echo 'No install needed'"
 }
