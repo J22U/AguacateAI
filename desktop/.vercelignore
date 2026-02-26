@@ -1,0 +1,6 @@
+node_modules
+.git
+README.md
+*.lock
+package-lock.json
+yarn.lock
